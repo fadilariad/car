@@ -13,7 +13,13 @@ const routes: Routes = [
     loadChildren: () => import('./features/find-car-form/find-car-form.module').then(
       (module) => module.FindCarFormModule
     )
-  }
+  },
+  {
+    path: '**',
+    redirectTo: 'dashboard',
+    pathMatch: 'full'
+  },
+
 ]
 
 

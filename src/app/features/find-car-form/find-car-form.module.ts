@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { containerComponent } from './container/container.component';
+import { ContainerComponent } from './container/container.component';
 import { RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
   {
     path: '',
-    component: containerComponent
+    component: ContainerComponent
   }
 ]
 
 @NgModule({
   declarations: [
-    containerComponent
+    ContainerComponent
   ],
   imports: [
     RouterModule.forChild(routes),
