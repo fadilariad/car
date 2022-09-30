@@ -1,1 +1,16 @@
-<p>works</p>
+<mat-stepper linear #stepper>
+  <mat-step [stepControl]="userForm" [editable]="true">
+    <app-user-details [form]="userForm"></app-user-details>
+  </mat-step>
+  <mat-step [stepControl]="carForm" [editable]="true">
+    <app-car-details [form]="carForm"></app-car-details>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-stepper>

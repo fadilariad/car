@@ -1,0 +1,30 @@
+<ng-container *ngIf="form">
+  <form [formGroup]="form">
+    <ng-template matStepLabel>Fill out your address</ng-template>
+    <div>
+      <mat-radio-group [formControl]="form.controls.motorType">
+        <mat-radio-button value="1">fuel</mat-radio-button>
+        <mat-radio-button value="2">electric</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Color</mat-label>
+        <input matInput [formControl]="form.controls.color" required>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-label>Seats {{form.controls.seats.getRawValue()}}</mat-label>
+      <mat-slider [formControl]="form.controls.seats"
+                  thumbLabel
+                  [max]="7"
+                  [min]="2"
+                  [step]="1">
+      </mat-slider>
+    </div>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>submit</button>
+    </div>
+  </form>
+</ng-container>
