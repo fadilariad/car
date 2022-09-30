@@ -7,16 +7,20 @@ import { MatInputModule } from "@angular/material/input";
 import { InputDateComponent } from './component/input-date/input-date.component';
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatButtonModule } from "@angular/material/button";
+import { ColorPickerComponent } from "@shared/component/color-picker/color-picker.component";
+import { ColorPickerModule } from "ngx-color-picker";
 
 
 @NgModule({
   declarations: [
     InputComponent,
-    InputDateComponent
+    InputDateComponent,
+    ColorPickerComponent
   ],
   exports: [
     InputComponent,
-    InputDateComponent
+    InputDateComponent,
+    ColorPickerComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +28,8 @@ import { MatButtonModule } from "@angular/material/button";
     ReactiveFormsModule,
     MatInputModule,
     MatDatepickerModule,
-    MatButtonModule
+    MatButtonModule,
+    ColorPickerModule
   ]
 })
 export class SharedModule { }
