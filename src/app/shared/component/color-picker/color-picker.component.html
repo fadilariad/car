@@ -1,0 +1,7 @@
+<mat-form-field appearance="fill">
+  <mat-label>{{label}}</mat-label>
+  <input [type]="type" readonly matInput [value]="color" [formControl]="control" placeholder="{{placeholder}}" [required]="required">
+</mat-form-field>
+ <input class="color-View" [style.background]="color"
+              [colorPicker]="color"
+              (colorPickerChange)="onChange($event)"/>
