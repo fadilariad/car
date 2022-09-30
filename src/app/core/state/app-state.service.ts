@@ -10,7 +10,7 @@ interface AppState {
 
 const INIT_APP_STATE: AppState = {
   landingPageVisits: 0,
-  choices: []
+  choices: JSON.parse(localStorage.getItem('app_car_choices') || '[]')
 }
 @Injectable({
   providedIn: 'root'
@@ -30,12 +30,18 @@ export class AppStateService extends State<AppState>{
   }
 
   newChoice(newChoice: Choice): void {
+
     const choices: Choice[] = this.state.choices;
     choices.push(newChoice);
     this.setState({
       ...this.state,
       choices
     })
+    this.saveChoiceToLocalStorage(choices)
+  }
+
+  private saveChoiceToLocalStorage(choices: Choice[]): void {
+   localStorage.setItem('app_car_choices', JSON.stringify(choices))
   }
 
 }

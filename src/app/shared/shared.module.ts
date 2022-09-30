@@ -9,13 +9,16 @@ import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatButtonModule } from "@angular/material/button";
 import { ColorPickerComponent } from "@shared/component/color-picker/color-picker.component";
 import { ColorPickerModule } from "ngx-color-picker";
+import { AlertComponent } from "@shared/alert/alert-component/alert.component";
+import { MatIconModule } from "@angular/material/icon";
 
 
 @NgModule({
   declarations: [
     InputComponent,
     InputDateComponent,
-    ColorPickerComponent
+    ColorPickerComponent,
+    AlertComponent
   ],
   exports: [
     InputComponent,
@@ -29,7 +32,8 @@ import { ColorPickerModule } from "ngx-color-picker";
     MatInputModule,
     MatDatepickerModule,
     MatButtonModule,
-    ColorPickerModule
+    ColorPickerModule,
+    MatIconModule,
   ]
 })
 export class SharedModule { }

@@ -7,6 +7,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { MatIconModule } from "@angular/material/icon";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatListModule } from "@angular/material/list";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MatListModule } from "@angular/material/list";
     MatIconModule,
     MatSidenavModule,
     MatListModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

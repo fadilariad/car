@@ -1,0 +1,11 @@
+.toast-error-container {
+  background-color: var(--red-50);
+  border-radius: 5px;
+  border: solid 1px var(--red-600);
+}
+
+.toast-success-container {
+  background-color: var(--secondary-100);
+  border-radius: 5px;
+  border: solid 1px var(--primary-600);
+}
