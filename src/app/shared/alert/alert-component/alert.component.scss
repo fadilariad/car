@@ -1,0 +1,39 @@
+:host {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+button {
+  background-color: inherit;
+  border: 0;
+  cursor: pointer;
+  font-size: 12px;
+
+}
+
+.msg-text {
+  font-size: 12px;
+  flex-grow: 1;
+&.error {
+   color: var(--red-700);
+ }
+&.success {
+   color: var(--primary-700);
+ }
+}
+}
+
+::ng-deep .mat-snack-bar-container {
+  width: 512px;
+  min-height: 50px;
+}
+
+mat-icon {
+  &.error{
+    color: var(--red-700);
+
+  }
+  &.success {
+    color: var(--primary-700);
+
+  }
+}

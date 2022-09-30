@@ -4,6 +4,7 @@ import { ChoiceCarForm } from "@shared/interfeces/forms";
 import { ActionsService } from "@actions/actions.service";
 import { NewCarChoice } from "@actions/app-actions";
 import { Choice } from "@shared/interfeces/choice";
+import { AlertService } from "@shared/alert/alert.service";
 
 @Component({
   selector: 'app-container',
@@ -24,14 +25,18 @@ export class ContainerComponent implements OnInit {
     motorType: new FormControl('', Validators.required),
   })
 
-  constructor(private actions: ActionsService) { }
+  constructor(
+    private actions: ActionsService,
+    private alert: AlertService
+  ) { }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
     if (this.choiceCarForm.valid) {
-      this.actions.dispatch(new NewCarChoice({...this.choiceCarForm.value} as Choice))
+      this.actions.dispatch(new NewCarChoice({...this.choiceCarForm.value} as Choice));
+      this.alert.success('check your mail', false);
     }
   }
 }

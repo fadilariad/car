@@ -1,0 +1,9 @@
+<mat-icon [ngClass]="msg.type"> {{msg.type === 'success' ? 'check' : 'cancel'}}</mat-icon>
+<span class="msg-text" [ngClass]="msg.type">{{msg.text}}</span>
+<button (click)="snackBarRef.dismiss()">
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M14.25 4.8 13.2 3.75 9 7.95l-4.2-4.2L3.75 4.8 7.95 9l-4.2 4.2 1.05 1.05 4.2-4.2 4.2 4.2 1.05-1.05-4.2-4.2 4.2-4.2z"
+          fill="#666" fill-opacity=".7"/>
+  </svg>
+</button>
