@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { CarForm, UserForm } from "../../../shared/interfeces/forms";
 
 @Component({
   selector: 'app-container',
@@ -7,24 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./container.component.css']
 })
 export class ContainerComponent implements OnInit {
-  // form: FormGroup | undefined
-  constructor(
-    // private formBuilder: FormBuilder
-  ) { }
+  userForm = new FormGroup<UserForm>({
+    fullName: new FormControl('h', Validators.required),
+    gender: new FormControl('', Validators.required),
+    email: new FormControl('hh@g.cvge', [Validators.required, Validators.email]),
+    birthDate: new FormControl('h', Validators.required),
+    address: new FormControl('h', Validators.required),
+    city: new FormControl('h', Validators.required),
+    country: new FormControl('h', Validators.required),
+
+  });
+
+  carForm = new FormGroup<CarForm>({
+    seats: new FormControl('2', Validators.required),
+    color: new FormControl('', Validators.required),
+    motorType: new FormControl('', Validators.required),
+  })
+  constructor() { }
 
   ngOnInit(): void {
-    // this.formBuilder.group({
-    //   fullName: [Validators.required],
-    //   gender: [Validators.required],
-    //   email: [Validators.required],
-    //   birthDate: [Validators.required],
-    //   address: [Validators.required],
-    //   city: [Validators.required],
-    //   country: [Validators.required],
-    //   seats: [Validators.required],
-    //   color: [Validators.required],
-    //   motorType: [Validators.required],
-    // })
   }
 
 }
