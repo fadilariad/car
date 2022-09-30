@@ -4,21 +4,8 @@
   justify-content: center;
   padding: 50px;
 }
-form {
+.form {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  gap: 50px;
 }
-
-.form-row {
-  display: flex;
-  gap: 18px;
-}
-
-.gender-buttons{
-  max-height: 40px;
-  margin-top: 5px;
-
-}
-
 

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { CarForm, UserForm } from "../../../shared/interfeces/forms";
+import { ChoiceCarForm } from "@shared/interfeces/forms";
+import { ActionsService } from "@actions/actions.service";
+import { NewCarChoice } from "@actions/app-actions";
+import { Choice } from "@shared/interfeces/choice";
 
 @Component({
   selector: 'app-container',
@@ -8,25 +11,27 @@ import { CarForm, UserForm } from "../../../shared/interfeces/forms";
   styleUrls: ['./container.component.css']
 })
 export class ContainerComponent implements OnInit {
-  userForm = new FormGroup<UserForm>({
-    fullName: new FormControl('h', Validators.required),
+  choiceCarForm = new FormGroup<ChoiceCarForm>({
+    fullName: new FormControl('', Validators.required),
     gender: new FormControl('', Validators.required),
-    email: new FormControl('hh@g.cvge', [Validators.required, Validators.email]),
-    birthDate: new FormControl('h', Validators.required),
-    address: new FormControl('h', Validators.required),
-    city: new FormControl('h', Validators.required),
-    country: new FormControl('h', Validators.required),
-
-  });
-
-  carForm = new FormGroup<CarForm>({
-    seats: new FormControl('2', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    birthDate: new FormControl('', Validators.required),
+    address: new FormControl('', Validators.required),
+    city: new FormControl('', Validators.required),
+    country: new FormControl('', Validators.required),
+    seats: new FormControl('', Validators.required),
     color: new FormControl('', Validators.required),
     motorType: new FormControl('', Validators.required),
   })
-  constructor() { }
+
+  constructor(private actions: ActionsService) { }
 
   ngOnInit(): void {
   }
 
+  onSubmit() {
+    if (this.choiceCarForm.valid) {
+      this.actions.dispatch(new NewCarChoice({...this.choiceCarForm.value} as Choice))
+    }
+  }
 }

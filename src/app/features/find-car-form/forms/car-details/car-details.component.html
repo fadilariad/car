@@ -1,6 +1,4 @@
 <ng-container *ngIf="form">
-  <form [formGroup]="form">
-    <ng-template matStepLabel>Fill out your address</ng-template>
     <div>
       <mat-radio-group [formControl]="form.controls.motorType">
         <mat-radio-button value="1">fuel</mat-radio-button>
@@ -22,9 +20,7 @@
                   [step]="1">
       </mat-slider>
     </div>
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button matStepperNext>submit</button>
-    </div>
-  </form>
+  <div>
+    <button type="submit" mat-button>submit</button>
+  </div>
 </ng-container>
