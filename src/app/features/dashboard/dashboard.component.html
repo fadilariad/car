@@ -1,1 +1,13 @@
-<p>dashboard works!</p>
+<ng-container *ngIf="choices$ | async as choices">
+  <mat-card *ngFor="let choice of choices">
+    <mat-card-header>
+      <span>{{choice.email}}</span>
+      <span>{{choice.fullName}}</span>
+    </mat-card-header>
+    <mat-card-content>
+      <span>{{choice.motorType}}</span>
+      <span>{{choice.seats}}</span>
+      <span>{{choice.color}}</span>
+    </mat-card-content>
+  </mat-card>
+</ng-container>

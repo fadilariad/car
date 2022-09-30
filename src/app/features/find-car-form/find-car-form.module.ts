@@ -12,9 +12,10 @@ import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatNativeDateModule } from "@angular/material/core";
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { MatRadioModule } from "@angular/material/radio";
-import { SharedModule } from "../../shared/shared.module";
+import { SharedModule } from "@shared/shared.module";
 import { UserDetailsComponent } from './forms/user-details/user-details.component';
 import { CarDetailsComponent } from './forms/car-details/car-details.component';
+import { MatCardModule } from "@angular/material/card";
 
 const routes: Routes = [
   {
@@ -43,6 +44,7 @@ const routes: Routes = [
         MatButtonToggleModule,
         MatRadioModule,
         SharedModule,
+        MatCardModule,
 
     ]
 })

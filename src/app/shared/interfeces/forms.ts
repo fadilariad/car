@@ -15,3 +15,5 @@ export interface CarForm {
   color: FormControl;
   motorType: FormControl;
 }
+
+export type ChoiceCarForm = UserForm & CarForm

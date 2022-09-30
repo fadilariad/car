@@ -1,32 +1,40 @@
 import { Injectable } from '@angular/core';
 import { State } from "./state";
 import { Observable } from "rxjs";
+import { Choice } from "@shared/interfeces/choice";
 
 interface AppState {
   landingPageVisits: number;
-  users: any[];
-  cars: any[]
+  choices: Choice[]
 }
 
 const INIT_APP_STATE: AppState = {
   landingPageVisits: 0,
-  users: [],
-  cars: []
+  choices: []
 }
 @Injectable({
   providedIn: 'root'
 })
 export class AppStateService extends State<AppState>{
   landingPageVisits: Observable<number> = this.select(state => state.landingPageVisits);
+  choices: Observable<Choice[]> = this.select(state => state.choices);
   constructor() {
     super(INIT_APP_STATE);
-    console.log('init app state')
   }
 
-  newLandingPageVisit() {
+  newLandingPageVisit(): void {
     this.setState({
       ...this.state,
       landingPageVisits: this.state.landingPageVisits + 1
+    })
+  }
+
+  newChoice(newChoice: Choice): void {
+    const choices: Choice[] = this.state.choices;
+    choices.push(newChoice);
+    this.setState({
+      ...this.state,
+      choices
     })
   }
 

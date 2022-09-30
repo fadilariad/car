@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from "@angular/forms";
-import { UserForm } from "../../../../shared/interfeces/forms";
+import { ChoiceCarForm } from "@shared/interfeces/forms";
 
 @Component({
   selector: 'app-user-details',
@@ -8,7 +8,7 @@ import { UserForm } from "../../../../shared/interfeces/forms";
   styleUrls: ['./user-details.component.css']
 })
 export class UserDetailsComponent implements OnInit {
-  @Input() form: FormGroup<UserForm> | undefined;
+  @Input() form: FormGroup<ChoiceCarForm> | undefined;
   constructor() { }
 
   ngOnInit(): void {

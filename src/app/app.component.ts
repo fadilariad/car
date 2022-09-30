@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ReducerService } from "./core/state/reducer.service";
+import { ReducerService } from "@state/reducer.service";
 
 @Component({
   selector: 'app-root',
@@ -9,6 +9,6 @@ import { ReducerService } from "./core/state/reducer.service";
 export class AppComponent {
   title = 'car';
 
-  constructor(private reducer: ReducerService,) {
+  constructor(private reducer: ReducerService) {
   }
 }

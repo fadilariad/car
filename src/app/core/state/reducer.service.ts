@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AppStateService } from "./app-state.service";
-import { ActionsService } from "../actions/actions.service";
-import { filter } from "rxjs";
-import { NewLandingPageVisit } from "../actions/app-actions";
+import { ActionsService } from "@actions/actions.service";
+import { NewCarChoice } from "@actions/app-actions";
 
 @Injectable({
   providedIn: 'root'
@@ -20,11 +19,13 @@ export class ReducerService {
     console.log('reducer running ...');
 
     this.actions.getActions$.pipe(
-      filter(action => action instanceof NewLandingPageVisit)
     ).subscribe(
-      () => {
-        this.appState.newLandingPageVisit()
+      (action) => {
+      if (action instanceof NewCarChoice) {
+        this.appState.newChoice(action.payload);
+      }
       }
     )
+
   }
 }

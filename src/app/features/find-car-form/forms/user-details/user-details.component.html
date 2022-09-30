@@ -1,13 +1,11 @@
 <ng-container *ngIf="form">
-<form [formGroup]="form">
-  <ng-template matStepLabel>Fill out your name</ng-template>
   <div class="form-row">
     <app-input [control]="form.controls.fullName" [label]="'Name'" [placeholder]="'Full Name'"></app-input>
     <app-input [control]="form.controls.email" [type]="'email'" [label]="'Email'"
                [placeholder]="'Email'"></app-input>
   </div>
   <div class="form-row">
-    <app-input-date></app-input-date>
+    <app-input-date [control]="form.controls.birthDate"></app-input-date>
     <div>
       <mat-button-toggle-group appearance="legacy" [formControl]="form.controls.gender">
         <mat-button-toggle value="1">Male</mat-button-toggle>
@@ -21,7 +19,5 @@
     <app-input [control]="form.controls.address" [placeholder]="'Address'" [label]="'Address'"></app-input>
   </div>
   <div>
-    <button mat-button matStepperNext>Next</button>
   </div>
-</form>
 </ng-container>
