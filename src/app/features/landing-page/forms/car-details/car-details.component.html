@@ -12,8 +12,8 @@
       <mat-label>Seats {{form.controls.seats.getRawValue()}}</mat-label>
       <mat-slider [formControl]="form.controls.seats"
                   thumbLabel
-                  [max]="7"
-                  [min]="2"
+                  [max]="maxSeatsNumber"
+                  [min]="minSeatsNumber"
                   [step]="1">
       </mat-slider>
     </div>

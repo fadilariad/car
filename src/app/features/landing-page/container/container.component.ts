@@ -5,6 +5,7 @@ import { ActionsService } from "@actions/actions.service";
 import { NewCarChoice, NewLandingPageVisit } from "@actions/app-actions";
 import { Choice } from "@shared/interfeces/choice";
 import { AlertService } from "@shared/alert/alert.service";
+import { MIN_CAR_SEATS } from "@shared/constans";
 
 @Component({
   selector: 'app-container',
@@ -20,7 +21,7 @@ export class ContainerComponent implements OnInit {
     address: new FormControl('', Validators.required),
     city: new FormControl('', Validators.required),
     country: new FormControl('', Validators.required),
-    seats: new FormControl('', Validators.required),
+    seats: new FormControl(MIN_CAR_SEATS, Validators.required),
     color: new FormControl('', Validators.required),
     motorType: new FormControl('', Validators.required),
   })
