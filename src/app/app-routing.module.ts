@@ -10,8 +10,8 @@ const routes: Routes = [
   },
   {
     path: 'car',
-    loadChildren: () => import('./features/find-car-form/find-car-form.module').then(
-      (module) => module.FindCarFormModule
+    loadChildren: () => import('./features/landing-page/landing-page.module').then(
+      (module) => module.LandingPageModule
     )
   },
   {

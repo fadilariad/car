@@ -1,0 +1,14 @@
+:host {
+  box-shadow: 2px 5px 4px var(--secondary-400);
+
+}
+.color-view {
+  height: 30px;
+  width: 30px;
+}
+
+.select-color {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}

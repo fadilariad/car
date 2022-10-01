@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-content>
+    <div class="select-color">
+      <mat-form-field appearance="fill">
+        <mat-label>Choose a color</mat-label>
+        <mat-select [(ngModel)]="selectedColor" (selectionChange)="onSelectColorChange($event)">
+          <mat-option *ngFor="let color of colors" [style.background-color]="color" value="{{color}}">
+            {{color}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="color-view" [style.background]="selectedColor"></div>
+    </div>
+    <plotly-plot *ngIf="graph" [data]="graph.data" [layout]="graph.layout" [useResizeHandler]="true"></plotly-plot>
+  </mat-card-content>
+</mat-card>

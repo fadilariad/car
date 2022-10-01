@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AppStateService } from "./app-state.service";
 import { ActionsService } from "@actions/actions.service";
-import { NewCarChoice } from "@actions/app-actions";
+import { InitSelectedColor, NewCarChoice, NewLandingPageVisit, SelectColor } from "@actions/app-actions";
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class ReducerService {
     this.reducer();
   }
 
-  reducer() {
+  private reducer() {
     console.log('reducer running ...');
 
     this.actions.getActions$.pipe(
@@ -24,6 +24,18 @@ export class ReducerService {
       if (action instanceof NewCarChoice) {
         this.appState.newChoice(action.payload);
       }
+
+        if (action instanceof InitSelectedColor) {
+          this.appState.initSelectedColor();
+        }
+
+        if (action instanceof SelectColor) {
+          this.appState.updateSelectedColor(action.payload);
+        }
+
+        if (action instanceof NewLandingPageVisit) {
+          this.appState.newLandingPageVisit();
+        }
       }
     )
 
