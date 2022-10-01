@@ -1,9 +1,23 @@
 <form class="form" [formGroup]="choiceCarForm" (submit)="onSubmit()">
   <mat-card>
-    <app-user-details [form]="choiceCarForm"></app-user-details>
+    <mat-card-title class="card-title">Hobbies</mat-card-title>
+    <mat-card-content>
+      <app-hobbies (onChange)="selectedHobbies = $event"></app-hobbies>
+    </mat-card-content>
   </mat-card>
+  <section>
+    <mat-card>
+      <mat-card-title class="card-title">User Details</mat-card-title>
+      <mat-card-content>
+        <app-user-details [form]="choiceCarForm"></app-user-details>
+      </mat-card-content>
+    </mat-card>
 
-  <mat-card>
-    <app-car-details [form]="choiceCarForm"></app-car-details>
-  </mat-card>
+    <mat-card>
+      <mat-card-title class="card-title">Car Details</mat-card-title>
+      <mat-card-content>
+        <app-car-details [form]="choiceCarForm"></app-car-details>
+      </mat-card-content>
+    </mat-card>
+  </section>
 </form>

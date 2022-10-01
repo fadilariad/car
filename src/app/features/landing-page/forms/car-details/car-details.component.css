@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.radio-buttons-group {
+  display: flex;
+  gap: 5px;
+}
+
+.submit-button {
+  width: 100%;
+  background-color: var(--primary-700);
+  color: var(--white);
+}

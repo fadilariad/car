@@ -26,10 +26,13 @@ export class ContainerComponent implements OnInit {
     motorType: new FormControl('', Validators.required),
   })
 
+  selectedHobbies: number[] = [];
+
   constructor(
     private actions: ActionsService,
     private alert: AlertService
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.actions.dispatch(new NewLandingPageVisit());
@@ -37,8 +40,8 @@ export class ContainerComponent implements OnInit {
 
   onSubmit() {
     if (this.choiceCarForm.valid) {
-      this.actions.dispatch(new NewCarChoice({...this.choiceCarForm.value} as Choice));
-      this.alert.success('check your mail', false);
+      this.actions.dispatch(new NewCarChoice({ ...this.choiceCarForm.value, hobbies: this.selectedHobbies } as Choice));
+      this.alert.success(`check your mail - ${this.choiceCarForm.controls.email.value}`, false);
     }
   }
 }

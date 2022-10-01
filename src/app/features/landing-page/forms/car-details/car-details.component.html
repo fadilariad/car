@@ -1,9 +1,11 @@
 <ng-container *ngIf="form">
     <div>
-      <mat-radio-group [formControl]="form.controls.motorType">
+      <mat-label>Motor Type</mat-label><br>
+      <mat-radio-group [formControl]="form.controls.motorType" class="radio-buttons-group">
         <mat-radio-button value="1">fuel</mat-radio-button>
         <mat-radio-button value="2">electric</mat-radio-button>
       </mat-radio-group>
+      <mat-error class="mat-error" *ngIf="form.controls.motorType.hasError('required') ">Please! Select car motor type</mat-error>
     </div>
     <div>
       <app-color-picker [label]="'Color'" [control]="form.controls.color" ></app-color-picker>
@@ -18,6 +20,6 @@
       </mat-slider>
     </div>
   <div>
-    <button type="submit" mat-button>submit</button>
+    <button class="submit-button" type="submit" mat-raised-button>submit</button>
   </div>
 </ng-container>

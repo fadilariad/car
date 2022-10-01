@@ -16,6 +16,8 @@ import { SharedModule } from "@shared/shared.module";
 import { UserDetailsComponent } from './forms/user-details/user-details.component';
 import { CarDetailsComponent } from './forms/car-details/car-details.component';
 import { MatCardModule } from "@angular/material/card";
+import { HobbiesComponent } from './forms/hobbies/hobbies.component';
+import { MatCheckboxModule } from "@angular/material/checkbox";
 
 const routes: Routes = [
   {
@@ -28,24 +30,26 @@ const routes: Routes = [
   declarations: [
     ContainerComponent,
     UserDetailsComponent,
-    CarDetailsComponent
+    CarDetailsComponent,
+    HobbiesComponent
   ],
-    imports: [
-        RouterModule.forChild(routes),
-        CommonModule,
-        MatFormFieldModule,
-        ReactiveFormsModule,
-        MatInputModule,
-        MatStepperModule,
-        MatButtonModule,
-        MatSliderModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
-        MatButtonToggleModule,
-        MatRadioModule,
-        SharedModule,
-        MatCardModule,
+  imports: [
+    RouterModule.forChild(routes),
+    CommonModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatStepperModule,
+    MatButtonModule,
+    MatSliderModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonToggleModule,
+    MatRadioModule,
+    SharedModule,
+    MatCardModule,
+    MatCheckboxModule,
 
-    ]
+  ]
 })
 export class LandingPageModule { }

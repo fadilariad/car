@@ -1,0 +1,1 @@
+<mat-checkbox *ngFor="let hobby of hobbies"  (change)="onHobbyChecked($event.checked, hobby.id)">{{hobby.name}}</mat-checkbox>

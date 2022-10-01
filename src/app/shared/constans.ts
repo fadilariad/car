@@ -15,3 +15,4 @@ export const localStorageKeysName = {
 
 export const MIN_CAR_SEATS = 2;
 export const MAX_CAR_SEATS = 7;
+export const MIN_YEARS_USER_OLD = 18;
