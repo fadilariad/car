@@ -7,5 +7,11 @@ export class NewCarChoice {
   }
 }
 
+export class SelectColor {
+  constructor(public payload: string) {
+  }
+}
 
-export type Action = NewLandingPageVisit | NewCarChoice
+export class InitSelectedColor {}
+
+export type Action = NewLandingPageVisit | NewCarChoice | SelectColor | InitSelectedColor

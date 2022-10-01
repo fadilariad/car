@@ -1,0 +1,15 @@
+<div class="row">
+  <app-statistics [landingPageSubmit]="((totalSubmittedForms$ | async) || 0)"
+              [electricEngine]="(electricEngineCount$ | async) || 0"
+              [fuelEngine]="(fuelEngineCount$ | async) || 0"
+              [landingPageVisits]="((landingPageVisits | async) || 0)"></app-statistics>
+
+  <ng-container *ngIf="colors$ | async as colors">
+    <app-color-vs-age *ngIf="ages$ | async as ages" [ageColorCount]="ages" [colors]="colors"></app-color-vs-age>
+  </ng-container>
+
+</div>
+
+<ng-container *ngIf="choices$ | async as choices">
+  <app-table [choices]="choices" [headers]="((tableHeaders$ | async) || [])"></app-table>
+</ng-container>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ChoiceCarForm } from "@shared/interfeces/forms";
 import { ActionsService } from "@actions/actions.service";
-import { NewCarChoice } from "@actions/app-actions";
+import { NewCarChoice, NewLandingPageVisit } from "@actions/app-actions";
 import { Choice } from "@shared/interfeces/choice";
 import { AlertService } from "@shared/alert/alert.service";
 
@@ -31,6 +31,7 @@ export class ContainerComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.actions.dispatch(new NewLandingPageVisit());
   }
 
   onSubmit() {

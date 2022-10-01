@@ -48,4 +48,4 @@ const routes: Routes = [
 
     ]
 })
-export class FindCarFormModule { }
+export class LandingPageModule { }

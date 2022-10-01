@@ -1,0 +1,32 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.row {
+  display: flex;
+  gap: 30px;
+}
+
+.card-header {
+  color: var(--primary-700);
+  font-size: 18px;
+}
+
+.card-content {
+  color: var(--primary-400);
+  font-size: 22px;
+}
+
+.card {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+  border: 1px solid var(--secondary-200);
+  border-radius: 10px;
+  box-shadow: 5px 10px 8px var(--secondary-400);
+}
