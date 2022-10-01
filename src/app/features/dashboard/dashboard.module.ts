@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from "./dashboard.component";
 import { RouterModule, Routes } from "@angular/router";
 import { MatCardModule } from "@angular/material/card";
+import { PlotlyModule } from "angular-plotly.js";
+import * as PlotlyJS from 'plotly.js-dist-min';
 
 const routes: Routes = [
   {
@@ -11,12 +13,14 @@ const routes: Routes = [
   }
 ]
 
+PlotlyModule.plotlyjs = PlotlyJS;
 @NgModule({
   declarations: [DashboardComponent],
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
-    MatCardModule
+    MatCardModule,
+    PlotlyModule
   ]
 })
 export class DashboardModule {
