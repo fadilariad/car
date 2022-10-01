@@ -26,7 +26,7 @@ export class ColorVsAgeComponent implements OnInit, OnDestroy {
       data: [
         { x: v.usersAgeArray, y: v.colorCount, type: 'bar' },
       ],
-      layout: { width: 400, height: 400, title: this.CHART_TITLE }
+      layout: { width: 350, height: 300, title: this.CHART_TITLE }
     };
   }
 
