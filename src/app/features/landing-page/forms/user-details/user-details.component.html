@@ -1,10 +1,10 @@
 <ng-container *ngIf="form">
-  <div class="form-row">
+  <div class="form-row" appMediaClass>
     <app-input [control]="form.controls.fullName" [label]="'Name'" [placeholder]="'Full Name'"></app-input>
     <app-input [control]="form.controls.email" [type]="'email'" [label]="'Email'"
                [placeholder]="'Email'"></app-input>
   </div>
-  <div class="form-row">
+  <div class="form-row" appMediaClass>
     <app-input-date [control]="form.controls.birthDate"></app-input-date>
     <div>
       <mat-button-toggle-group appearance="legacy" [formControl]="form.controls.gender">
@@ -14,7 +14,7 @@
       <mat-error class="mat-error" *ngIf="form.controls.gender.hasError('required')">Please! Select yor gender.</mat-error>
     </div>
   </div>
-  <div class="form-row">
+  <div class="form-row" appMediaClass>
     <app-input [control]="form.controls.country" [placeholder]="'Country'" [label]="'Country'"></app-input>
     <app-input [control]="form.controls.city" [placeholder]="'City'" [label]="'City'"></app-input>
     <app-input [control]="form.controls.address" [placeholder]="'Address'" [label]="'Address'"></app-input>

@@ -1,21 +1,21 @@
 <div class="row">
   <div class="card">
     <div class="card-header">Total Visits</div>
-    <div class="card-content">{{landingPageVisits}}</div>
+    <div class="card-content"><app-number-count [number]="landingPageVisits"></app-number-count> </div>
   </div>
   <div class="card">
     <div class="card-header">Total users submit</div>
-    <div class="card-content">{{landingPageSubmit}}</div>
+    <div class="card-content"><app-number-count [number]="landingPageSubmit"></app-number-count></div>
   </div>
 </div>
 <div class="row">
   <div class="card">
     <div class="card-header">electric engine</div>
-    <div class="card-content">{{electricEngine}}</div>
+    <div class="card-content"><app-number-count [number]="electricEngine"></app-number-count></div>
   </div>
   <div class="card">
     <div class="card-header">fuel engine</div>
-    <div class="card-content">{{fuelEngine}}</div>
+    <div class="card-content"><app-number-count [number]="fuelEngine"></app-number-count></div>
   </div>
 </div>
 

@@ -16,3 +16,11 @@ export const localStorageKeysName = {
 export const MIN_CAR_SEATS = 2;
 export const MAX_CAR_SEATS = 7;
 export const MIN_YEARS_USER_OLD = 18;
+
+export const BREAKPOINTS = {
+  desktop: '(min-width: 1001px)',
+  tablet: '(min-width: 768px) and (max-width: 1000px)',
+  mobile: '(max-width: 767px)',
+};
+
+export type BreakpointName = 'mobile' | 'desktop' | 'tablet';

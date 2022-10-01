@@ -8,8 +8,14 @@
   padding: 30px 0;
 }
 
-.row {
+.row.desktop {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.row.table{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }

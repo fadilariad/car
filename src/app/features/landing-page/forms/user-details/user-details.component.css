@@ -7,4 +7,8 @@
   display: flex;
   gap: 15px;
 }
-
+.form-row.mobile, .form-row.tablet {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

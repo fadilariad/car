@@ -13,6 +13,7 @@ import { StatisticsComponent } from './charts/statistics/statistics.component';
 import { TableComponent } from './charts/table/table.component';
 import { MatGridListModule } from "@angular/material/grid-list";
 import { FormsModule } from "@angular/forms";
+import { SharedModule } from "@shared/shared.module";
 
 const routes: Routes = [
   {
@@ -33,7 +34,8 @@ PlotlyModule.plotlyjs = PlotlyJS;
     MatFormFieldModule,
     MatSelectModule,
     MatGridListModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ]
 })
 export class DashboardModule {

@@ -2,4 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+:host.tablet {
+
+}
+
+:host.tablet > mat-checkbox {
+  flex: 50%;
 }

@@ -11,6 +11,9 @@ import { ColorPickerComponent } from "@shared/component/color-picker/color-picke
 import { ColorPickerModule } from "ngx-color-picker";
 import { AlertComponent } from "@shared/alert/alert-component/alert.component";
 import { MatIconModule } from "@angular/material/icon";
+import { MediaDirective } from './directives/media.directive';
+import { MediaClassDirective } from './directives/media-class.directive';
+import { NumberCountComponent } from './component/number-count/number-count.component';
 
 
 @NgModule({
@@ -18,12 +21,18 @@ import { MatIconModule } from "@angular/material/icon";
     InputComponent,
     InputDateComponent,
     ColorPickerComponent,
-    AlertComponent
+    AlertComponent,
+    MediaDirective,
+    MediaClassDirective,
+    NumberCountComponent
   ],
   exports: [
     InputComponent,
     InputDateComponent,
-    ColorPickerComponent
+    ColorPickerComponent,
+    MediaClassDirective,
+    MediaDirective,
+    NumberCountComponent
   ],
   imports: [
     CommonModule,

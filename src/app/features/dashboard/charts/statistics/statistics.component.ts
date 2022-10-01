@@ -10,9 +10,11 @@ export class StatisticsComponent implements OnInit {
   @Input() landingPageSubmit: number = 0;
   @Input() electricEngine: number = 0;
   @Input() fuelEngine: number = 0;
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
