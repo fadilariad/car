@@ -4,7 +4,7 @@
   </button>
 </header>
 <mat-sidenav-container>
-  <mat-sidenav #matDrawer mode="over" class="side-nav-content" >
+  <mat-sidenav #matDrawer mode="side" class="side-nav-content" >
     <mat-action-list>
       <button mat-list-item [routerLink]="['/dashboard']" (click)="matDrawer.close()">dashboard</button>
       <button mat-list-item [routerLink]="['/car']" (click)="matDrawer.close()">find car</button>

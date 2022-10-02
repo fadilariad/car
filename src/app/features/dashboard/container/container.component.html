@@ -7,7 +7,6 @@
   <ng-container *ngIf="colors$ | async as colors">
     <app-color-vs-age *ngIf="ages$ | async as ages" [ageColorCount]="ages" [colors]="colors"></app-color-vs-age>
   </ng-container>
-
 </div>
 <ng-container *appMedia="['desktop']">
   <ng-container *ngIf="choices$ | async as choices">
